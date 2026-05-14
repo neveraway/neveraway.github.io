@@ -48,13 +48,13 @@
   </p>
   <div class="flex flex-wrap items-center justify-center gap-4">
     <a href="#download" class="bg-slate-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-700 transition">
-      Get the one-liner
+      Download — free
     </a>
     <a href="https://github.com/neveraway/neveraway" class="border border-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-100 transition">
       View source
     </a>
   </div>
-  <p class="text-sm text-slate-500 mt-6">~100 lines of code. No accounts. No telemetry. No paywall.<br />There's also a binary, if you must.</p>
+  <p class="text-sm text-slate-500 mt-6">~100 lines of code. No accounts. No telemetry. No paywall.<br />Or skip the download — there's a one-liner.</p>
 </section>
 
 <!-- features (satirized) -->
@@ -124,51 +124,54 @@
 <section id="download" class="bg-white border-y border-slate-200 py-20">
   <div class="max-w-6xl mx-auto px-6">
     <p class="text-sm uppercase tracking-widest text-slate-500 text-center mb-3">Install</p>
-    <h2 class="text-4xl font-bold text-center mb-4">Don't even download it.</h2>
+    <h2 class="text-4xl font-bold text-center mb-4">Pick your platform.</h2>
     <p class="text-lg text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-      It's a one-liner. Paste it in your terminal. Ctrl-C to stop. That's the whole product.
+      Drag, double-click, done. Lives in your tray (Windows) or menu bar (Mac) with a Pause button and an auto-off scheduler.
     </p>
 
-    <div class="max-w-4xl mx-auto space-y-6">
-      <div class="border border-slate-200 rounded-xl overflow-hidden">
-        <div class="px-6 py-3 border-b border-slate-200 bg-slate-50 flex items-center gap-2">
-          <span class="text-xl">🪟</span>
-          <span class="font-semibold">Windows (PowerShell)</span>
-        </div>
-        <pre class="bg-slate-900 text-slate-100 p-6 overflow-x-auto text-sm"><code>$k=Add-Type -MemberDefinition '[DllImport("user32.dll")]public static extern void keybd_event(byte v,byte s,int f,int e);' -Name N -Namespace W -PassThru;while($true){$k::keybd_event(0x87,0,2,0);Start-Sleep 10}</code></pre>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div class="border border-slate-200 rounded-xl p-8">
+        <div class="text-3xl mb-3">🪟</div>
+        <h3 class="font-semibold text-xl mb-2">Windows</h3>
+        <p class="text-slate-600 mb-4 text-sm">Tray app. Double-click <code class="text-xs bg-slate-100 px-1 rounded">neveraway.exe</code> to run.</p>
+        <a href="https://github.com/neveraway/neveraway/releases/latest/download/neveraway-win-x64-v3.1.0.zip" class="block bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-700 transition text-center mb-2">
+          Download v3.1.0
+        </a>
+        <a href="https://github.com/neveraway/neveraway/releases" class="block text-sm text-slate-500 hover:text-slate-700 text-center">all releases</a>
       </div>
-      <div class="border border-slate-200 rounded-xl overflow-hidden">
-        <div class="px-6 py-3 border-b border-slate-200 bg-slate-50 flex items-center gap-2">
-          <span class="text-xl">🍎</span>
-          <span class="font-semibold">macOS (bash)</span>
-        </div>
-        <pre class="bg-slate-900 text-slate-100 p-6 overflow-x-auto text-sm"><code>caffeinate -d -i -u bash -c 'while true; do swift -e "import CoreGraphics; let p = CGEvent(source: nil)!.location; CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)"; sleep 10; done'</code></pre>
+
+      <div class="border border-slate-200 rounded-xl p-8">
+        <div class="text-3xl mb-3">🍎</div>
+        <h3 class="font-semibold text-xl mb-2">macOS (Apple Silicon)</h3>
+        <p class="text-slate-600 mb-4 text-sm">Menu-bar app. Drag <code class="text-xs bg-slate-100 px-1 rounded">NeverAway.app</code> to /Applications.</p>
+        <a href="https://github.com/neveraway/neveraway/releases/latest/download/neveraway-mac-app-v3.1.0.zip" class="block bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-700 transition text-center mb-2">
+          Download v3.1.0
+        </a>
+        <a href="https://github.com/neveraway/neveraway/releases" class="block text-sm text-slate-500 hover:text-slate-700 text-center">all releases</a>
       </div>
     </div>
 
     <div class="max-w-4xl mx-auto mt-16 border-t border-slate-200 pt-12">
-      <p class="text-sm uppercase tracking-widest text-slate-500 text-center mb-3">But if you insist...</p>
-      <h3 class="text-2xl font-bold text-center mb-2">Fine, here's a binary.</h3>
+      <p class="text-sm uppercase tracking-widest text-slate-500 text-center mb-3">Don't even want a binary?</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-center mb-3">Also free.</h3>
       <p class="text-slate-600 text-center mb-8 max-w-2xl mx-auto">
-        Lives in your tray (Windows) or menu bar (Mac). Same mechanism as the one-liner, with a Pause button and an auto-off scheduler.
+        Your computer can already do this. Paste one of these in a terminal, ctrl-C when you're done. Same mechanism as the app — just without the icon. For today only, for the very low price of <span class="italic">also free</span>:
       </p>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="border border-slate-200 rounded-xl p-6">
-          <div class="text-2xl mb-2">🪟</div>
-          <h4 class="font-semibold mb-2">Windows</h4>
-          <a href="https://github.com/neveraway/neveraway/releases/latest/download/neveraway-win-x64-v3.1.0.zip" class="block bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-700 transition text-center mb-1 text-sm">
-            Download v3.1.0
-          </a>
-          <a href="https://github.com/neveraway/neveraway/releases" class="block text-xs text-slate-500 hover:text-slate-700 text-center">all releases</a>
+      <div class="space-y-4">
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <div class="px-6 py-3 border-b border-slate-200 bg-slate-50 flex items-center gap-2">
+            <span class="text-xl">🪟</span>
+            <span class="font-semibold">Windows (PowerShell)</span>
+          </div>
+          <pre class="bg-slate-900 text-slate-100 p-6 overflow-x-auto text-sm"><code>$k=Add-Type -MemberDefinition '[DllImport("user32.dll")]public static extern void keybd_event(byte v,byte s,int f,int e);' -Name N -Namespace W -PassThru;while($true){$k::keybd_event(0x87,0,2,0);Start-Sleep 10}</code></pre>
         </div>
-        <div class="border border-slate-200 rounded-xl p-6">
-          <div class="text-2xl mb-2">🍎</div>
-          <h4 class="font-semibold mb-2">macOS (Apple Silicon)</h4>
-          <a href="https://github.com/neveraway/neveraway/releases/latest/download/neveraway-mac-app-v3.1.0.zip" class="block bg-slate-900 text-white px-4 py-2 rounded-lg font-medium hover:bg-slate-700 transition text-center mb-1 text-sm">
-            Download v3.1.0
-          </a>
-          <a href="https://github.com/neveraway/neveraway/releases" class="block text-xs text-slate-500 hover:text-slate-700 text-center">all releases</a>
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <div class="px-6 py-3 border-b border-slate-200 bg-slate-50 flex items-center gap-2">
+            <span class="text-xl">🍎</span>
+            <span class="font-semibold">macOS (bash)</span>
+          </div>
+          <pre class="bg-slate-900 text-slate-100 p-6 overflow-x-auto text-sm"><code>caffeinate -d -i -u bash -c 'while true; do swift -e "import CoreGraphics; let p = CGEvent(source: nil)!.location; CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: p, mouseButton: .left)?.post(tap: .cghidEventTap)"; sleep 10; done'</code></pre>
         </div>
       </div>
     </div>
